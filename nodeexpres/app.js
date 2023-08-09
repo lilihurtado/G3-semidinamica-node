@@ -4,7 +4,12 @@ para crear un webserver en un entorno local
 const express = require('express');
 // el webserver se le asigne al archivo app.js
 const app = express();
-const port = 9596;
+//const port = 9596;//
+
+// importar el paquete de dotenv
+require('dotenv').config();
+ const port = process.env.PORT;
+
 
 // mostrar contenido de la carpeta public
 app.use(express.static('public'));
